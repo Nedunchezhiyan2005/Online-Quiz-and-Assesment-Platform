@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizFlow | Comprehensive Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div style="font-weight: 700; color: var(--primary); font-size: 1.25rem; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="zap"></i> QuizFlow
+        </div>
+        <div class="nav-links">
+            <a href="Home.html" class="active">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#features">Features</a>
+            <a href="#services">Services</a>
+            <a href="#reports">Reports</a>
+            <a href="#contact">Contact</a>
+            <a href="login.html">Logout</a>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <span id="current-time" style="font-size: 0.8rem; color: var(--text-secondary);"></span>
+            <button class="btn" id="theme-toggle" style="background: none; color: var(--text-primary); border: 1px solid var(--card-border); padding: 5px 10px;">
+                <i data-lucide="sun"></i>
+            </button>
+            <button class="btn" id="notif-btn" style="background: none; color: var(--text-primary); border: 1px solid var(--card-border); padding: 5px 10px;">
+                <i data-lucide="bell"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="notification-panel" id="notif-panel">
+        <h4 style="margin-bottom: 10px;">Notifications</h4>
+        <p style="font-size: 0.8rem; color: var(--text-secondary);">Welcome to QuizFlow! Start your first assessment today.</p>
+    </div>
+
+    <header class="welcome-banner animate-slide" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);">
+        <h1 style="color: #000;">QuizFlow Platform</h1>
+        <p class="tagline" style="color: var(--primary); font-weight: 600;">Empowering Minds Through Digital Assessments</p>
+        <div style="max-width: 600px; margin: 0 auto; color: var(--text-secondary); line-height: 1.6;">
+            <p><strong>Vision:</strong> To be the global leader in digital educational intelligence.</p>
+            <p><strong>Mission:</strong> To provide accessible, reliable, and innovative assessment solutions for everyone.</p>
+            <p style="margin-top: 1rem;">QuizFlow is a state-of-the-art platform designed to bridge the gap between traditional learning and modern digital evaluation.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+                <a href="register.html" class="btn btn-primary" style="padding: 18px 36px; font-size: 1.1rem; box-shadow: 0 15px 30px -5px rgba(0, 97, 255, 0.3);">Get Started</a>
+                <a href="#features" class="btn" style="background: #ffffff; border: 1px solid var(--card-border); color: var(--text-primary); text-decoration: none; padding: 18px 36px; font-size: 1.1rem; box-shadow: var(--shadow);">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="slider-container">
+        <div class="slide active"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+
+    <section class="stats-container">
+        <div class="stat-card">
+            <h3>Registered Users</h3>
+            <div class="value" data-target="2500">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Quizzes Created</h3>
+            <div class="value" data-target="840">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Tests Completed</h3>
+            <div class="value" data-target="15200">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Avg. Performance</h3>
+            <div class="value" data-target="88">0</div><span style="font-size: 1.5rem; font-weight: 700;">%</span>
+        </div>
+    </section>
+
+    <section id="features" style="padding: 60px 2rem; background: var(--card-bg); margin-top: 40px;">
+        <h2 style="text-align: center; margin-bottom: 40px;">Key Features</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div class="stat-card animate-fade">
+                <i data-lucide="shield-check" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                <h4>Secure Assessments</h4>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Anti-cheat measures and secure browser lockdown capabilities.</p>
+            </div>
+            <div class="stat-card animate-fade">
+                <i data-lucide="bar-chart-big" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                <h4>Real-time Analytics</h4>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Instant feedback and detailed performance reports.</p>
+            </div>
+            <div class="stat-card animate-fade">
+                <i data-lucide="smartphone" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                <h4>Mobile First</h4>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Access your quizzes anytime, anywhere, on any device.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="padding: 60px 2rem;">
+        <h2 style="text-align: center; margin-bottom: 40px;">Our Modules</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            <div style="padding: 20px; border: 1px solid var(--card-border); border-radius: var(--radius-md); text-align: center;">
+                <h4>Exam Builder</h4>
+            </div>
+            <div style="padding: 20px; border: 1px solid var(--card-border); border-radius: var(--radius-md); text-align: center;">
+                <h4>Result Portal</h4>
+            </div>
+            <div style="padding: 20px; border: 1px solid var(--card-border); border-radius: var(--radius-md); text-align: center;">
+                <h4>Proctoring Service</h4>
+            </div>
+            <div style="padding: 20px; border: 1px solid var(--card-border); border-radius: var(--radius-md); text-align: center;">
+                <h4>Certificates</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="padding: 100px 2rem; background: #ffffff; border-radius: 40px 40px 0 0; margin-top: 60px;">
+        <h2 class="section-title">Get in Touch</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; max-width: 1100px; margin: 0 auto; align-items: center;">
+            <div class="animate-fade">
+                <h3 style="font-size: 2rem; margin-bottom: 20px;">Ready to revolutionize your assessments?</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6;">Our team is here to help you set up and scale your digital examinations. Reach out for a custom demo or technical support.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <div style="display: flex; gap: 20px; align-items: center;">
+                        <div style="background: #eff6ff; color: #3b82f6; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center;"><i data-lucide="mail"></i></div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 1.1rem;">Email Support</div>
+                            <div style="color: var(--text-secondary);">support@quizflow.com</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px; align-items: center;">
+                        <div style="background: #f0fdf4; color: #22c55e; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center;"><i data-lucide="phone"></i></div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 1.1rem;">Call Us</div>
+                            <div style="color: var(--text-secondary);">+1 (234) 567-890</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 40px;">
+                    <a href="#" class="btn" style="background: #f1f5f9; color: #1e293b; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="twitter" style="width: 18px;"></i></a>
+                    <a href="#" class="btn" style="background: #f1f5f9; color: #1e293b; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="linkedin" style="width: 18px;"></i></a>
+                    <a href="#" class="btn" style="background: #f1f5f9; color: #1e293b; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="facebook" style="width: 18px;"></i></a>
+                </div>
+            </div>
+
+            <form class="glass-card animate-fade" style="padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid var(--card-border);">
+                <h4 style="margin-bottom: 24px; font-size: 1.25rem;">Send us a Message</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                    <div class="input-group">
+                        <label>First Name</label>
+                        <input type="text" class="input-field" placeholder="Jane">
+                    </div>
+                    <div class="input-group">
+                        <label>Last Name</label>
+                        <input type="text" class="input-field" placeholder="Doe">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" class="input-field" placeholder="jane@example.com">
+                </div>
+                <div class="input-group">
+                    <label>How can we help?</label>
+                    <textarea class="input-field" rows="4" placeholder="Briefly describe your requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 1rem;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 2rem; text-align: center; border-top: 1px solid var(--card-border);">
+        <p>© 2026 QuizFlow | Developed by [Student Name]</p>
+        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; color: var(--text-secondary);">
+            <i data-lucide="github"></i>
+            <i data-lucide="globe"></i>
+            <i data-lucide="mail"></i>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-btn">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

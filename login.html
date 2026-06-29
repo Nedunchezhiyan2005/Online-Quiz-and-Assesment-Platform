@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | QuizFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 450px;
+            padding: 50px;
+            text-align: center;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-area {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        h1 {
+            color: var(--text-primary);
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        .role-selector {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            justify-content: center;
+        }
+
+        .role-btn {
+            background: #f8fafc;
+            border: 1px solid var(--card-border);
+            padding: 10px 20px;
+            border-radius: 30px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .role-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 8px 15px rgba(0, 97, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card animate-fade">
+        <div class="logo-area">
+            <i data-lucide="zap"></i> QuizFlow
+        </div>
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Please enter your credentials to continue</p>
+
+        <div class="role-selector">
+            <button class="role-btn active" onclick="setRole('student')">Student</button>
+            <button class="role-btn" onclick="setRole('instructor')">Instructor</button>
+            <button class="role-btn" onclick="setRole('admin')">Admin</button>
+        </div>
+
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="input-field" placeholder="name@example.com" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="input-field" placeholder="••••••••" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; margin-top: 10px;">
+                Sign In
+            </button>
+        </form>
+
+        <div style="margin-top: 32px; font-size: 0.9rem; color: var(--text-secondary);">
+            Don't have an account? <a href="register.html" style="color: var(--primary); text-decoration: none; font-weight: 700;">Create account</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+
+        function setRole(role) {
+            document.querySelectorAll('.role-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            localStorage.setItem('userRole', role);
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            
+            btn.innerHTML = '<span>Verifying...</span>';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 800);
+        }
+    </script>
+</body>
+</html>
